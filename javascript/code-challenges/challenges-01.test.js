@@ -8,8 +8,14 @@ Write a function named `addOne` that takes an array of numbers, and returns a ne
 Use `forEach` to loop over the input array and work with each value.  Push the new value into a local array. Return the local array;
 ------------------------------------------------------------------------------------------------ */
 
+// DONE
+
 const addOne = (arr) => {
-  // Solution code here...
+  let NEW_ARRAY = [];
+  arr.forEach((element) => {
+    NEW_ARRAY.push(element + 1);
+  });
+  return NEW_ARRAY;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -20,8 +26,14 @@ Write a function named `addExclamation` that takes an array of strings, and retu
 Use `forEach` to loop over the input array. Modify each string, and add the updated value into a local array. Return the local array;
 ------------------------------------------------------------------------------------------------ */
 
+// DONE
+
 const addExclamation = (arr) => {
-  // Solution code here...
+  let NEW_ARRAY = [];
+  arr.forEach((element) => {
+    NEW_ARRAY.push(`${element}` + `!`);
+  });
+  return NEW_ARRAY;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -32,8 +44,14 @@ Write a function named `allUpperCase` that takes an array of strings, and return
 Use `forEach` to loop over the input array. The modified strings should each be added into a local array. Return that local array.
 ------------------------------------------------------------------------------------------------ */
 
+// DONE
+
 const allUpperCase = (arr) => {
-  // Solution code here...
+  let NEW_ARRAY = [];
+  arr.forEach((element) => {
+    NEW_ARRAY.push(element.toUpperCase());
+  });
+  return NEW_ARRAY;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,12 +64,19 @@ Then, write a function named `speaker` that takes in an array of strings and a c
 Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array.
 ------------------------------------------------------------------------------------------------ */
 
+// DONE
+
 const greeting = (word) => {
-  // Solution code here...
+  let newWord = word.toUpperCase() + `!`;
+  return newWord;
 };
 
-const speaker = (words, callback) => {
-  // Solution code here...
+const speaker = (arr, greeting) => {
+  let NEW_ARRAY = [];
+  arr.forEach((element) => {
+    NEW_ARRAY.push(greeting(element));
+  });
+  return NEW_ARRAY;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -70,12 +95,19 @@ Within the addNumbers function, invoke the callback function as many times as ne
 Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
+// DONE
+// this function doesn't use forEach and I don't think it can be used here
+// when the function runs, it starts with an empty array and forEach can't iterate over empty arrays
+
 const addValues = (arr, value) => {
-  // Solution code here...
+  arr.push(value);
 };
 
-const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+const addNumbers = (num, arr, times, addValues) => {
+  for (let i = 0; i < times; i++) {
+    addValues(arr, num);
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -96,8 +128,21 @@ The inventory is formatted like this:
 This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list.
 ------------------------------------------------------------------------------------------------ */
 
+// DONE
+
 const createList = (availableItems) => {
-  // Solution code here...
+  // initialize blank array
+  let NEW_ARRAY = [];
+  // iterate over the array of objects
+  availableItems.forEach((element) => {
+    // conditional for available = true
+    if (element.available) {
+      // if available, add name to array of available products
+      NEW_ARRAY.push(element.name);
+    }
+  });
+  // return list of available products
+  return NEW_ARRAY;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -114,8 +159,39 @@ Iterate over the array using forEach to determine the output based on several ru
 Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
+// DONE
+// separate function to check divisibility of a number using modulo operator %
+// if modulus === 0, then the number is evenly divisible by the divisor
+
+const checkModulus = (num, divisor) => {
+  if (num % divisor === 0) {
+    return true;
+  }
+};
+
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  // initialize empty array
+  let NEW_ARRAY = [];
+  // iterate over the array
+  arr.forEach((element) => {
+    // check for divisibility by both 3 and 5 first
+    if (checkModulus(element, 3) && checkModulus(element, 5)) {
+      NEW_ARRAY.push('Fizz Buzz');
+    }
+    // then check divisibility by 3 and 5 individually
+    else if (checkModulus(element, 3)) {
+      NEW_ARRAY.push('Fizz');
+    }
+    else if (checkModulus(element, 5)) {
+      NEW_ARRAY.push('Buzz');
+    }
+    // if not divisible, push element value
+    else {
+      NEW_ARRAY.push(element);
+    }
+  });
+  // return fizzing and buzzing array
+  return NEW_ARRAY;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -169,7 +245,10 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+// NATE COMMENT
+// test 7 has to be edited so it doesn't get skipped
+// the 'x' was removed from 'xdescribe'
+describe('Testing challenge 7', () => {
   const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   test('It should print out messages or numbers', () => {
