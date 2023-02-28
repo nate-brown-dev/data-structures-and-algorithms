@@ -66,12 +66,15 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 
 // DONE
 
-const greeting = (word) => word.toUpperCase() + `!`;
+const greeting = (word) => {
+  let newWord = word.toUpperCase() + `!`;
+  return newWord;
+};
 
-const speaker = (arr, callback) => {
+const speaker = (arr, greeting) => {
   let NEW_ARRAY = [];
   arr.forEach((element) => {
-    NEW_ARRAY.push(callback(element ));
+    NEW_ARRAY.push(greeting(element));
   });
   return NEW_ARRAY;
 };
