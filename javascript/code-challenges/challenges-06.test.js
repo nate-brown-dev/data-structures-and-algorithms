@@ -24,14 +24,16 @@ Returns: ['dyoll', 'eimaj'];
 
 // DONE
 
-const getNames = (arr) => {
-  const names = arr.map(val => {
-    let split = val.name.split('');
-    let reverse = split.reduce((acc, cur) => cur + acc);
-    return reverse;
-  });
-  return names;
-};
+// const getNames = (arr) => {
+//   const names = arr.map(val => {
+//     let split = val.name.split('');
+//     let reverse = split.reduce((acc, cur) => cur + acc);
+//     return reverse;
+//   });
+//   return names;
+// };
+
+const getNames = (arr) => arr.map(val => val.name.split('').reduce((acc, cur) => cur + acc));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -42,11 +44,12 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 
 // DONE
 
-const appendTheEnd = (str) => {
-  let newStr = `${str}` + ' The end.';
-  return newStr;
-};
+// const appendTheEnd = (str) => {
+//   let newStr = `${str}` + ' The end.';
+//   return newStr;
+// };
 
+const appendTheEnd = (str) => `${str}` + ' The end.';
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -80,11 +83,11 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 
 // DONE
 
-const addBirthYearProperty = (obj, year) => {
-  console.log(obj);
-  obj.yearBorn = year;
-  console.log(obj);
-};
+// const addBirthYearProperty = (obj, year) => {
+//   obj.yearBorn = year;
+// };
+
+const addBirthYearProperty = (obj, year) => obj.yearBorn = year;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
