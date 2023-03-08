@@ -1,5 +1,7 @@
 'use strict';
 
+const { compareDocumentPosition } = require("domutils");
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -146,29 +148,60 @@ const gruffaloCrumble = {
 
 // DONE omg this is ugly
 
+// const listFoods = (recipe) => {
+//   let ingredients = recipe.ingredients;
+
+//   let slicedArr = [];
+//   for (let i = 0; i < ingredients.length; i++) {
+//     let sliced = ingredients[i].slice(3);
+//     slicedArr.push(sliced);
+//   }
+
+//   let reSlicedArr = [];
+//   for (let i = 0; i < ingredients.length; i++) {
+//     let reSliced = slicedArr[i].slice(slicedArr[i].indexOf(' ', 1));
+//     reSlicedArr.push(reSliced);
+//   }
+
+//   let reReSlicedArr = [];
+//   for (let i = 0; i < ingredients.length; i++) {
+//     let reReSliced = reSlicedArr[i].slice(1);
+//     reReSlicedArr.push(reReSliced);
+//   }
+
+//   return reReSlicedArr;
+// };
+
 const listFoods = (recipe) => {
   let ingredients = recipe.ingredients;
+  let result = [];
 
-  let slicedArr = [];
   for (let i = 0; i < ingredients.length; i++) {
     let sliced = ingredients[i].slice(3);
-    slicedArr.push(sliced);
+    let reSliced = sliced.slice(sliced.indexOf(' ', 1));
+    let reReSliced = reSliced.slice(1);
+    result.push(reReSliced);
   }
 
-  let reSlicedArr = [];
-  for (let i = 0; i < ingredients.length; i++) {
-    let reSliced = slicedArr[i].slice(slicedArr[i].indexOf(' ', 1));
-    reSlicedArr.push(reSliced);
-  }
-
-  let reReSlicedArr = [];
-  for (let i = 0; i < ingredients.length; i++) {
-    let reReSliced = reSlicedArr[i].slice(1);
-    reReSlicedArr.push(reReSliced);
-  }
-
-  return reReSlicedArr;
+  return result;
 };
+
+// this version doesn't work because it leaves "cups" in "cups chopped nuts"
+
+// const listFoods = (recipe) => {
+//   let ingredients = recipe.ingredients;
+//   let result = [];
+
+//   for (let i = 0; i < ingredients.length; i++) {
+//     let sliced = ingredients[i].slice(ingredients[i].indexOf(' ', 2));
+//     let reSliced = sliced.slice(1);
+//     result.push(reSliced);
+//   }
+//   console.log(result);
+//   return result;
+// };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
