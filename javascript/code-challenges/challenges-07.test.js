@@ -178,13 +178,16 @@ const listFoods = (recipe) => {
 
   for (let i = 0; i < ingredients.length; i++) {
     let sliced = ingredients[i].slice(3);
+    console.log(sliced);
     let reSliced = sliced.slice(sliced.indexOf(' ', 1));
+    console.log(reSliced);
     let reReSliced = reSliced.slice(1);
+    console.log(reReSliced);
     result.push(reReSliced);
   }
-
   return result;
 };
+
 
 // this version doesn't work because it leaves "cups" in "cups chopped nuts"
 
