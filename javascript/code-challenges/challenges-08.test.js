@@ -118,6 +118,14 @@ const isCapitalized = (str) => {
   return matchArr;
 };
 
+// const isCapitalized = (str) => {
+//   const regex = /([A-Z][a-z]+)+/g;
+//   let matchArr = str.match(regex);
+//   return matchArr;
+// };
+
+// npm test 08
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
@@ -126,17 +134,19 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 // DONE
 
-const citiesAtoJ = (arr) => {
-  let matchArr = [];
-  let regex = /^[A-J]/;
-  arr.forEach(el => {
-    if (el.match(regex)) {
-      matchArr.push(el);
-    }
-  });
-  console.log(matchArr);
-  return matchArr;
-};
+// const citiesAtoJ = (arr) => {
+//   let matchArr = [];
+//   let regex = /^[A-J]/;
+//   arr.forEach(el => {
+//     if (el.match(regex)) {
+//       matchArr.push(el);
+//     }
+//   });
+//   console.log(matchArr);
+//   return matchArr;
+// };
+
+const citiesAtoJ = (arr) => arr.filter(city => /^[A-J]/.test(city));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
