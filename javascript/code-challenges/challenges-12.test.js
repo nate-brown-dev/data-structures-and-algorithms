@@ -20,9 +20,13 @@ Write a function named validatePin that uses a regular expression pattern to val
 If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
-const validatePin = (pin) => {
-  // Solution code here...
-};
+// const containsWorld = (input) => /world/.test(input);
+
+// DONE
+
+const validatePin = (pin) => /^[0-9]{4}\b/.test(pin);
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -32,9 +36,11 @@ Write a function named validateWord that uses a regular expression pattern to va
 If the word is between 5 and 10 characters long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
-const validateWord = (word) => {
-  // Solution code here...
-};
+// const containsWorld = (input) => /world/.test(input);
+
+// DONE
+
+const validateWord = (word) => /^[A-z]{5,10}\b/.test(word);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -44,9 +50,11 @@ Write a function named hasNumber that uses a regular expression pattern to deter
 If it does, return true. If not, return false.
 ------------------------------------------------------------------------------------------------ */
 
-const hasNumber = (string) => {
-  // Solution code here...
-};
+// const containsWorld = (input) => /world/.test(input);
+
+// DONE
+
+const hasNumber = (string) => /[A-z][0-9]/.test(string);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
