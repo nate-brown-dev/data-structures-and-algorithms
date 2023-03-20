@@ -22,8 +22,12 @@ Write a function named firstLetters that takes in an array of strings and return
 For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 'w', 'w', ':']
 ------------------------------------------------------------------------------------------------ */
 
+// DONE
+
 const firstLetters = (arr) => {
-  // Solution code here...
+  let firstLetters = arr.map(str => str.slice(0, 1));
+  console.log(firstLetters);
+  return firstLetters;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -34,8 +38,17 @@ Write a function named findHappiness that takes in an array of strings and retur
 For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this is great :)', ':)))))']
 ------------------------------------------------------------------------------------------------ */
 
+// DONE
+
 const findHappiness = (arr) => {
-  // Solution code here...
+  let smileys = [];
+  arr.forEach ((el) => {
+    if (el.includes(':)')) {
+      smileys.push(el);
+    }
+  });
+  console.log(smileys);
+  return smileys;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -47,7 +60,12 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
+  return arr.map(number => {
+    let first = number.substring(1,4);
+    let middle = number.substring(6,9);
+    let last = number.substring(10);
+    return first + middle + last;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -59,7 +77,12 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+  let splitArr = str.split('');
+  console.log(splitArr);
+  let resultArr = splitArr.filter( (el, idx) => idx % 2 === 1);
+  let result = resultArr.join('');
+  console.log(result);
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,7 +92,9 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  let everyArr = arr.every(str => str.includes(':)'));
+  console.log(everyArr);
+  return everyArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
