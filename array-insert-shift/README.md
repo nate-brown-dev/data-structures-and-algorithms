@@ -6,7 +6,7 @@ Write a function called insertShiftArray which takes in an array and a value to 
 
 ![Revised Whiteboard, no Javascript methods used](revised_insert_shift_whiteboard.png)
 
-![Whiteboard](array_insert_shift_whiteboard.png)
+<!-- ![Whiteboard](array_insert_shift_whiteboard.png) -->
 
 ## Approach & Efficiency
 
