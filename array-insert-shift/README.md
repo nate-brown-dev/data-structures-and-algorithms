@@ -16,6 +16,4 @@ I re-did this problem to not use any methods whatsoever and now I don't understa
 
 Solution example is shown in the code block on the whiteboard
 
-Working solution code at this REPL
-
-[Solution Code](https://replit.com/@ndbrown1983/UsableDarkvioletComputergame#index.js)
+Working solution code at this REPL: [Solution Code](https://replit.com/@ndbrown1983/UsableDarkvioletComputergame#index.js)
