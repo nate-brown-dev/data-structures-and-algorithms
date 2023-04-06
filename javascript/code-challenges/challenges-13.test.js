@@ -26,7 +26,7 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 
 const firstLetters = (arr) => {
   let firstLetters = arr.map(str => str.slice(0, 1));
-  console.log(firstLetters);
+  // console.log(firstLetters);
   return firstLetters;
 };
 
@@ -47,7 +47,7 @@ const findHappiness = (arr) => {
       smileys.push(el);
     }
   });
-  console.log(smileys);
+  // console.log(smileys);
   return smileys;
 };
 
@@ -78,10 +78,10 @@ For example, 'abcdefg' returns 'bdf'
 
 const onlyOddChars = (str) => {
   let splitArr = str.split('');
-  console.log(splitArr);
+  // console.log(splitArr);
   let resultArr = splitArr.filter( (el, idx) => idx % 2 === 1);
   let result = resultArr.join('');
-  console.log(result);
+  // console.log(result);
   return result;
 };
 
@@ -93,7 +93,7 @@ Write a function named allHappy that takes in an array of strings and returns a 
 
 const allHappy = (arr) => {
   let everyArr = arr.every(str => str.includes(':)'));
-  console.log(everyArr);
+  // console.log(everyArr);
   return everyArr;
 };
 

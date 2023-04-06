@@ -163,8 +163,7 @@ const hasChildrenValues = (arr, character) => {
   arr.forEach( el => {
     if ( Object.values(el).includes(character) ) {
       namedCharacter = el;
-    }})
-  console.log(namedCharacter);
+    }});
   return ( Object.keys(namedCharacter).includes('children') );
 };
 
