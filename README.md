@@ -28,3 +28,6 @@ To run your tests
 
 [Array Insert Shift](array-insert-shift/README.md)
 
+[Array Binary Search](array-binary-search/README.md)
+
+[Linked List](linked-list/README.md)
