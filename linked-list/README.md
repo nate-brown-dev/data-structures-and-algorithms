@@ -49,5 +49,5 @@ Write tests to prove the following functionality:
 
 ## Solution
 
-Solution
+Solution is in the code.
 
