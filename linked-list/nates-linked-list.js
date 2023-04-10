@@ -18,7 +18,7 @@ class LinkedList {
   // travserses across the LinkedList until it reaches the last node
   traverse() {
     let current = this.head;
-    while(current) {
+    while (current) {
       console.log(current.value);
       current = current.next;
     }
@@ -29,13 +29,12 @@ class LinkedList {
   // returns false if value is NOT found
   includes(value) {
     let current = this.head;
-    while(current) {
+    while (current) {
       if (current.value === value) {
         return true;
       } else {
-      current = current.next;
+        current = current.next;
       }
-      return false;
     }
   }
 
@@ -56,14 +55,14 @@ class LinkedList {
 
   insert(data, index) {
     const nodeToInsert = new Node(data);
-    if ( index === 0 ) {
+    if (index === 0) {
       nodeToInsert.next = this.head;
       this.head = nodeToInsert;
     } else {
       let current = this.head;
       let prev = null;
       let i = 0;
-      while ( i < index ) {
+      while (i < index) {
         prev = current;
         current = current.next;
         i++;

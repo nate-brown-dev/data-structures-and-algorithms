@@ -9,12 +9,20 @@ describe('Test Linked List data structure', () => {
     expect(emptyList.head).toBeNull;
   });
 
-  test('Can properly insert into linked list', () => {
+  test('Can properly insert into linked list at specified position', () => {
     let testList = new LinkedList();
     testList.head = new Node('birdbath');
     testList.head.next = new Node('vodka');
     testList.insert('vermouth', 1);
     expect(testList.head.next.value).toEqual('vermouth');
+  });
+
+  test('Can properly insert into linked list at head / pos 0', () => {
+    let testList = new LinkedList();
+    testList.head = new Node('birdbath');
+    testList.head.next = new Node('vodka');
+    testList.insert('shaker', 0);
+    expect(testList.head.value).toEqual('shaker');
   });
 
   test('Head property will properly point to first node in linked list', () => {
@@ -24,12 +32,19 @@ describe('Test Linked List data structure', () => {
     expect(testList.head.value).toEqual('birdbath');
   });
 
-  xtest('Can properly insert multiple nodes into linked list', () => { });
+  test('Can properly insert multiple nodes into linked list', () => { });
+    let testList = new LinkedList();
+    testList.head = new Node('birdbath');
+    testList.head.next = new Node('vodka');
+    testList.insert('fernet', 1);
+    testList.insert('ice', 1);
+    expect(testList.head.next.value).toEqual('ice');
 
   test('Return true when finding value within linked list that exists', () => {
     let testList = new LinkedList();
     testList.head = new Node('birdbath');
     testList.head.next = new Node('vodka');
+    console.log(testList.includes('vodka'));
     expect(testList.includes('vodka')).toBeTruthy;
   });
 
