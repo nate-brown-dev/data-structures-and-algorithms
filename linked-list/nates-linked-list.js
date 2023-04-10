@@ -24,6 +24,9 @@ class LinkedList {
     }
   }
 
+  // checks to see if value is somewhere in the Linked List
+  // returns true if value is found
+  // returns false if value is NOT found
   includes(value) {
     let current = this.head;
     while(current) {
@@ -52,12 +55,7 @@ class LinkedList {
   // }
 
   insert(data, index) {
-    // if ( index < 0 || index > this.size) {
-    //   return false;
-    // }
-
     const nodeToInsert = new Node(data);
-
     if ( index === 0 ) {
       nodeToInsert.next = this.head;
       this.head = nodeToInsert;
@@ -74,7 +72,6 @@ class LinkedList {
       nodeToInsert.next = current;
     }
     // this.size++;
-    return true;
   }
 
 }
