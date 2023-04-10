@@ -55,5 +55,14 @@ describe('Test Linked List data structure', () => {
     expect(testList.includes('whiskey')).toBeFalsy;
   });
 
-  xtest('Can properly return collection of all values that exist in linked list', () => { });
+  test('Can properly return collection of all values that exist in linked list', () => {
+    let testList = new LinkedList();
+    testList.head = new Node('birdbath');
+    testList.head.next = new Node('vodka');
+    testList.head.next.next = new Node('toothpick');
+    expect(testList.collect()).toEqual(
+      ['birdbath','vodka','toothpick']
+      );
+  });
+  
 })

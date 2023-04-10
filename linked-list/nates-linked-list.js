@@ -53,6 +53,8 @@ class LinkedList {
   //   // this.size++;
   // }
 
+  // insert node function
+  // if new node will become head, specify index to add as 0
   insert(data, index) {
     const nodeToInsert = new Node(data);
     if (index === 0) {
@@ -71,6 +73,17 @@ class LinkedList {
       nodeToInsert.next = current;
     }
     // this.size++;
+  }
+
+  // collect all values in the list in an array
+  collect() {
+    let current = this.head;
+    let collection = [];
+    while (current) {
+      collection.push(current.value);
+      current = current.next;
+    }
+    return collection;
   }
 
 }
