@@ -85,7 +85,6 @@ class LinkedList {
       this.head = nodeToInsert;
     } else {
       let current = this.head;
-      // let insertBeforeNode = null;
       while (current) {
         if (current.next.value === insertBeforeValue) {
           let insertBeforeNode = current.next;
@@ -93,26 +92,36 @@ class LinkedList {
           prev.next = nodeToInsert;
           nodeToInsert.next = insertBeforeNode;
           return;
-        } else if (current.next !== null) {
-          current = current.next;
         } else {
-        return;
+          current = current.next;
         }
       }
     }
   }
 
-  // let current = this.head;
-  // let prev = null;
-  // let i = 0;
-  // while (i < index) {
-  //   prev = current;
-  //   current = current.next;
-  //   i++;
-  // }
-  // prev.next = nodeToInsert;
-  // nodeToInsert.next = current;
-  // }
+
+  // insert after function
+  // if statement in case insert before node = head
+  insertAfter(newValue, insertAfterValue) {
+    const nodeToInsert = new Node(newValue);
+    if (this.head.value === insertAfterValue) {
+      let next = this.head.next;
+      this.head.next = nodeToInsert;
+      nodeToInsert.next = next;
+    } else {
+      let current = this.head;
+      while (current) {
+        if (current.value === insertAfterValue) {
+          let after = current.next;
+          current.next = nodeToInsert;
+          nodeToInsert.next = after;
+          return;
+        } else {
+          current = current.next;
+        }
+      }
+    }
+  }
 
 
 

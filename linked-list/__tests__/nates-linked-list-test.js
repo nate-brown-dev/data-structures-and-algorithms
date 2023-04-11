@@ -105,9 +105,21 @@ describe('Test Linked List data structure', () => {
     testList.head.next = new Node('vodka');
     testList.head.next.next = new Node('toothpick');
     testList.insertBefore('ice', 'toothpick');
-    console.log(testList);
-    console.log(testList.collect());
+    // console.log(testList);
+    // console.log(testList.collect());
     expect(testList.head.next.next.value).toEqual('ice');
+  });
+
+
+  test('Can insert node after selected node', () => {
+    let testList = new LinkedList();
+    testList.head = new Node('birdbath');
+    testList.head.next = new Node('vodka');
+    testList.head.next.next = new Node('toothpick');
+    testList.insertAfter('ice', 'toothpick');
+    console.log(testList);
+    console.log('testlist with node inserted after selected node: ' + testList.collect());
+    expect(testList.head.next.next.next.value).toEqual('ice');
   });
 
 })
