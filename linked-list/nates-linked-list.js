@@ -43,7 +43,7 @@ class LinkedList {
   // appends new Node to end of LinkedList
   append(data) {
     const newNode = new Node(data);
-    if(!this.head) {
+    if (!this.head) {
       this.head = newNode;
     } else {
       let current = this.head;
@@ -74,6 +74,48 @@ class LinkedList {
       nodeToInsert.next = current;
     }
   }
+
+
+  // insert before function
+  // if statement in case insert before node = head
+  insertBefore(newValue, insertBeforeValue) {
+    const nodeToInsert = new Node(newValue);
+    if (this.head.value === insertBeforeValue) {
+      nodeToInsert.next = this.head;
+      this.head = nodeToInsert;
+    } else {
+      let current = this.head;
+      let prev = null;
+      let insertBeforeNode = null;
+      while (current) {
+        if (current.next.value === insertBeforeValue) {
+          insertBeforeNode = current.next;
+          prev = current;
+          prev.next = nodeToInsert;
+          nodeToInsert.next = insertBeforeNode;
+          return;
+        } else if (current.next !== null) {
+          current = current.next;
+        } else {
+        return;
+        }
+      }
+    }
+  }
+
+  // let current = this.head;
+  // let prev = null;
+  // let i = 0;
+  // while (i < index) {
+  //   prev = current;
+  //   current = current.next;
+  //   i++;
+  // }
+  // prev.next = nodeToInsert;
+  // nodeToInsert.next = current;
+  // }
+
+
 
   // collect all values in the list in an array
   collect() {
