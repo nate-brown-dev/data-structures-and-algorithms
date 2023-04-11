@@ -32,13 +32,14 @@ describe('Test Linked List data structure', () => {
     expect(testList.head.value).toEqual('birdbath');
   });
 
-  test('Can properly insert multiple nodes into linked list', () => { });
+  test('Can properly insert multiple nodes into linked list', () => {
     let testList = new LinkedList();
     testList.head = new Node('birdbath');
     testList.head.next = new Node('vodka');
     testList.insert('fernet', 1);
     testList.insert('ice', 1);
     expect(testList.head.next.value).toEqual('ice');
+  });
 
   test('Return true when finding value within linked list that exists', () => {
     let testList = new LinkedList();
@@ -52,6 +53,7 @@ describe('Test Linked List data structure', () => {
     let testList = new LinkedList();
     testList.head = new Node('birdbath');
     testList.head.next = new Node('vodka');
+    console.log(testList.includes('whiskey'));
     expect(testList.includes('whiskey')).toBeFalsy;
   });
 
@@ -64,5 +66,29 @@ describe('Test Linked List data structure', () => {
       ['birdbath','vodka','toothpick']
       );
   });
-  
+
+  test('Can add node to end of linked list', () => {
+    let testList = new LinkedList();
+    testList.head = new Node('birdbath');
+    testList.head.next = new Node('vodka');
+    testList.append('vermouth');
+    expect(testList.head.next.next.value).toEqual('vermouth');
+  });
+
+  test('Can add multiple nodes to end of linked list', () => {
+    let testList = new LinkedList();
+    testList.head = new Node('birdbath');
+    testList.head.next = new Node('vodka');
+    testList.append('vermouth');
+    testList.append('water');
+    expect(testList.head.next.next.next.value).toEqual('water');
+  });
+
+  test('Can add node to empty list', () => {
+    let testList = new LinkedList();
+    testList.append('shaker');
+    console.log(testList);
+    expect(testList.head.value).toEqual('shaker');
+  });
+
 })

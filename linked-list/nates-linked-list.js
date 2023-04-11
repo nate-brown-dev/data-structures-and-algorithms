@@ -36,22 +36,22 @@ class LinkedList {
         current = current.next;
       }
     }
+    return false;
   }
 
   // appends new Node to end of LinkedList
-  // append(data) {
-  //   const newNode = new Node(data);
-  //   if(!this.head) {
-  //     this.head = newNode;
-  //   } else {
-  //     let current = this.head;
-  //     while (current.next) {
-  //       current = current.next;
-  //     }
-  //     current.next = newNode;
-  //   }
-  //   // this.size++;
-  // }
+  append(data) {
+    const newNode = new Node(data);
+    if(!this.head) {
+      this.head = newNode;
+    } else {
+      let current = this.head;
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = newNode;
+    }
+  }
 
   // insert node function
   // if new node will become head, specify index to add as 0

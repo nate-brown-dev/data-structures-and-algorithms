@@ -24,15 +24,28 @@ Work based on methods previously defined in Challenge 05.
 
 Write tests to prove the following functionality:
 
-Can successfully add a node to the end of the linked list
-Can successfully add multiple nodes to the end of a linked list
-Can successfully insert a node before a node located i the middle of a linked list
-Can successfully insert a node before the first node of a linked list
-Can successfully insert after a node in the middle of the linked list
-Can successfully insert a node after the last node of the linked list
+- Can successfully add a node to the end of the linked list
+  - DONE
+  - function `append()` adds a new node to the end of the list
+
+- Can successfully add multiple nodes to the end of a linked list
+  - DONE
+  - calling function `append()` multiple times will add multiple nodes to the end of the list
+
+- Can successfully insert a node before a node located i the middle of a linked list
+  - Rewrite insert function to work this way, divide into 3 separate functions?
+
+- Can successfully insert a node before the first node of a linked list
+  - Rewrite insert function to work this way, divide into 3 separate functions?
+
+- Can successfully insert after a node in the middle of the linked list
+  - Rewrite insert function to work this way, divide into 3 separate functions?
+
+- Can successfully insert a node after the last node of the linked list
+  - I don't understand what this function is supposed to do. The `append()` function already performs this action
+
 Unit tests must be passing before you submit your final solution code.
 
 ## Solution
 
 Solution is in the code.
-
