@@ -22,6 +22,7 @@ class LinkedList {
       console.log(current.value);
       current = current.next;
     }
+    return true;
   }
 
   // checks to see if value is somewhere in the Linked List
@@ -72,7 +73,6 @@ class LinkedList {
       prev.next = nodeToInsert;
       nodeToInsert.next = current;
     }
-    // this.size++;
   }
 
   // collect all values in the list in an array
@@ -87,18 +87,6 @@ class LinkedList {
   }
 
 }
-
-let LinkedListToTest = new LinkedList();
-
-LinkedListToTest.head = new Node('birdbath');
-LinkedListToTest.head.next = new Node('vodka');
-LinkedListToTest.head.next.next = new Node('toothpick');
-LinkedListToTest.head.next.next.next = new Node('olives');
-LinkedListToTest.head.next.next.next.next = new Node('olive juice');
-
-console.log('current linked list contains the following ingredients', LinkedListToTest);
-
-LinkedListToTest.traverse();
 
 module.exports = {
   LinkedList,

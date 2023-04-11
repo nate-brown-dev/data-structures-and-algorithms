@@ -46,7 +46,7 @@ describe('Test Linked List data structure', () => {
     testList.head = new Node('birdbath');
     testList.head.next = new Node('vodka');
     console.log(testList.includes('vodka'));
-    expect(testList.includes('vodka')).toBeTruthy;
+    expect(testList.includes('vodka')).toBeTruthy();
   });
 
   test('Return false when searching for value in linked list that does not exist', () => {
@@ -54,7 +54,7 @@ describe('Test Linked List data structure', () => {
     testList.head = new Node('birdbath');
     testList.head.next = new Node('vodka');
     console.log(testList.includes('whiskey'));
-    expect(testList.includes('whiskey')).toBeFalsy;
+    expect(testList.includes('whiskey')).toBeFalsy();
   });
 
   test('Can properly return collection of all values that exist in linked list', () => {
@@ -89,6 +89,14 @@ describe('Test Linked List data structure', () => {
     testList.append('shaker');
     console.log(testList);
     expect(testList.head.value).toEqual('shaker');
+  });
+
+  test('Can traverse a list', () => {
+    let testList = new LinkedList();
+    testList.head = new Node('birdbath');
+    testList.head.next = new Node('vodka');
+    testList.head.next.next = new Node('toothpick');
+    expect(testList.traverse()).toBeTruthy();
   });
 
 })
