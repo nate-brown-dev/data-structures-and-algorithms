@@ -136,6 +136,37 @@ class LinkedList {
     return collection;
   }
 
+  countNodes() {
+    let numberOfNodes = 0;
+    let current = this.head;
+    while (current) {
+      numberOfNodes++
+      current = current.next;
+    }
+    return numberOfNodes;
+  }
+
+  // find kth works for normal values, node to find = head, values out of range
+  findKthFromEnd(k) {
+    let count = this.countNodes();
+    let kthNodeFromHead = count - k;
+    if (kthNodeFromHead < 1) {
+      console.log('out of range');
+      return false;
+    } else if (kthNodeFromHead === 1) {
+      let current = this.head;
+      console.log(current.value);
+      return current.value;
+    } else {
+      let current = this.head;
+      for (let j = 1; j < kthNodeFromHead; j++) {
+        current = current.next;
+      }
+      console.log(current.value);
+      return current.value;
+    }
+  }
+
 }
 
 module.exports = {

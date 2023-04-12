@@ -122,4 +122,17 @@ describe('Test Linked List data structure', () => {
     expect(testList.head.next.next.next.value).toEqual('ice');
   });
 
+  test('Can return value of kth node from tail', () => {
+    let testList = new LinkedList();
+    testList.head = new Node('birdbath');
+    testList.head.next = new Node('vodka');
+    testList.head.next.next = new Node('toothpick');
+    testList.head.next.next.next = new Node('olives');
+    testList.head.next.next.next.next = new Node('olive juice');
+    expect(testList.findKthFromEnd(2)).toEqual('toothpick');
+    expect(testList.findKthFromEnd(4)).toEqual('birdbath');
+    expect(testList.findKthFromEnd(10)).toBeFalsy();
+  });
+
+
 })

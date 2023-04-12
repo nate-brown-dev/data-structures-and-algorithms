@@ -1,18 +1,15 @@
-# 401 Challenge 06: Linked List Insertions
+# 401 Challenge 06: Linked List Kth From End
 
-Write the following methods for the Linked List class:
+Write the following method for the Linked List class:
 
-- append // DONE
-  - arguments: new value
-  - adds a new node with the given value to the end of the list
-- insert before // DONE
-  - arguments: value, new value
-  - adds a new node with the given new value immediately before the first node that has the value specified
-- insert after // DONE
-  - arguments: value, new value
-  - adds a new node with the given new value immediately after the first node that has the value specified
+kth from end
+argument: a number, k, as a parameter.
+Return the node’s value that is k places from the tail of the linked list.
+You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
 
 ## Whiteboard Process
+
+// needs new whiteboard
 
 ![whiteboard image](linked-list-insertion-whiteboard.png)
 
@@ -24,21 +21,13 @@ Work based on methods previously defined in Challenge 05.
 
 Write tests to prove the following functionality:
 
-- Can successfully add a node to the end of the linked list // DONE
-  - function `append()` adds a new node to the end of the list
+Write tests for the following scenarios, and any other cases that help you ensure your code is working as expected.
 
-- Can successfully add multiple nodes to the end of a linked list // DONE
-  - calling function `append()` multiple times will add multiple nodes to the end of the list
-
-- Can successfully insert a node before a node located in the middle of a linked list // DONE
-
-- Can successfully insert a node before the first node of a linked list // DONE
-
-- Can successfully insert after a node in the middle of the linked list // DONE
-
-- Can successfully insert a node after the last node of the linked list
-  - I don't understand what this function is supposed to do. The `append()` function already performs this action
-
+Where k is greater than the length of the linked list
+Where k and the length of the list are the same
+Where k is not a positive integer
+Where the linked list is of a size 1
+“Happy Path” where k is not at the end, but somewhere in the middle of the linked list
 Unit tests must be passing before you submit your final solution code.
 
 ## Solution
