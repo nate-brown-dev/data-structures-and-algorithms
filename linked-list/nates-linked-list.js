@@ -22,6 +22,7 @@ class LinkedList {
       console.log(current.value);
       current = current.next;
     }
+    return true;
   }
 
   // checks to see if value is somewhere in the Linked List
@@ -36,22 +37,22 @@ class LinkedList {
         current = current.next;
       }
     }
+    return false;
   }
 
   // appends new Node to end of LinkedList
-  // append(data) {
-  //   const newNode = new Node(data);
-  //   if(!this.head) {
-  //     this.head = newNode;
-  //   } else {
-  //     let current = this.head;
-  //     while (current.next) {
-  //       current = current.next;
-  //     }
-  //     current.next = newNode;
-  //   }
-  //   // this.size++;
-  // }
+  append(data) {
+    const newNode = new Node(data);
+    if (!this.head) {
+      this.head = newNode;
+    } else {
+      let current = this.head;
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = newNode;
+    }
+  }
 
   // insert node function
   // if new node will become head, specify index to add as 0
@@ -72,8 +73,57 @@ class LinkedList {
       prev.next = nodeToInsert;
       nodeToInsert.next = current;
     }
-    // this.size++;
   }
+
+
+  // insert before function
+  // if statement in case insert before node = head
+  insertBefore(newValue, insertBeforeValue) {
+    const nodeToInsert = new Node(newValue);
+    if (this.head.value === insertBeforeValue) {
+      nodeToInsert.next = this.head;
+      this.head = nodeToInsert;
+    } else {
+      let current = this.head;
+      while (current) {
+        if (current.next.value === insertBeforeValue) {
+          let insertBeforeNode = current.next;
+          let prev = current;
+          prev.next = nodeToInsert;
+          nodeToInsert.next = insertBeforeNode;
+          return;
+        } else {
+          current = current.next;
+        }
+      }
+    }
+  }
+
+
+  // insert after function
+  // if statement in case insert before node = head
+  insertAfter(newValue, insertAfterValue) {
+    const nodeToInsert = new Node(newValue);
+    if (this.head.value === insertAfterValue) {
+      let next = this.head.next;
+      this.head.next = nodeToInsert;
+      nodeToInsert.next = next;
+    } else {
+      let current = this.head;
+      while (current) {
+        if (current.value === insertAfterValue) {
+          let after = current.next;
+          current.next = nodeToInsert;
+          nodeToInsert.next = after;
+          return;
+        } else {
+          current = current.next;
+        }
+      }
+    }
+  }
+
+
 
   // collect all values in the list in an array
   collect() {
@@ -87,18 +137,6 @@ class LinkedList {
   }
 
 }
-
-let LinkedListToTest = new LinkedList();
-
-LinkedListToTest.head = new Node('birdbath');
-LinkedListToTest.head.next = new Node('vodka');
-LinkedListToTest.head.next.next = new Node('toothpick');
-LinkedListToTest.head.next.next.next = new Node('olives');
-LinkedListToTest.head.next.next.next.next = new Node('olive juice');
-
-console.log('current linked list contains the following ingredients', LinkedListToTest);
-
-LinkedListToTest.traverse();
 
 module.exports = {
   LinkedList,
