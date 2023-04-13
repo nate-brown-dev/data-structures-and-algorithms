@@ -1,4 +1,4 @@
-# 401 Challenge 06: Linked List Kth From End
+# 401 Challenge 06: Linked List Zipper
 
 Write the following method for the Linked List class:
 
