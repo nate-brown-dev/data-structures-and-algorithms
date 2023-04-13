@@ -2,9 +2,16 @@
 
 Write the following method for the Linked List class:
 
-kth from end
-argument: a number, k, as a parameter.
-Return the node’s value that is k places from the tail of the linked list.
+Write a function called zip lists
+
+Arguments: 2 linked lists
+
+Return: New Linked List, zipped as noted below
+
+Zip the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the the zipped list.
+
+Try and keep additional space down to O(1)
+
 You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
 
 ## Whiteboard Process
@@ -21,14 +28,14 @@ Work based on methods previously defined in Challenge 05.
 
 Write tests to prove the following functionality:
 
-Write tests for the following scenarios, and any other cases that help you ensure your code is working as expected.
+Example
 
-Where k is greater than the length of the linked list
-Where k and the length of the list are the same
-Where k is not a positive integer
-Where the linked list is of a size 1
-“Happy Path” where k is not at the end, but somewhere in the middle of the linked list
-Unit tests must be passing before you submit your final solution code.
+zipLists(list1, list2)
+
+Arg list1	Arg list2	Output
+{1} -> {3} -> {2} -> null	{5} -> {9} -> {4} -> null	{1} -> {5} -> {3} -> {9} -> {2} -> {4} -> null
+{1} -> {3} -> null	{5} -> {9} -> {4} -> null	{1} -> {5} -> {3} -> {9} -> {4} -> null
+{1} -> {3} -> {2} -> null	{5} -> {9} -> null	{1} -> {5} -> {3} -> {9} -> {2} -> null
 
 ## Solution
 
