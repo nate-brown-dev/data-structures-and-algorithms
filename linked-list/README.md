@@ -18,7 +18,7 @@ You have access to the Node class and all the properties on the Linked List clas
 
 // needs new whiteboard
 
-![whiteboard image](linked-list-kth-whiteboard.png)
+![whiteboard image](linked-list-zipper-whiteboard.png)
 
 ## Approach & Efficiency
 
