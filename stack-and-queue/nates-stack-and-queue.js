@@ -267,6 +267,23 @@ class Queue {
     }
   }
 
+  peek() {
+    if (!this.front && !this.back) {
+      return false;
+    }
+    else {
+      return this.front.value;
+    }
+  }
+
+  isEmpty() {
+    if (!this.front && !this.back) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
 }
 
 module.exports = {

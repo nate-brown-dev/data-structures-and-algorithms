@@ -208,6 +208,26 @@ describe('Test Linked List data structure', () => {
     expect(testQueue.front.next).toBeNull();
   });
 
+  test('can peek at front of queue', () => {
+    let emptyQueue = new Queue();
+    expect(emptyQueue.peek()).toBeFalsy();
+
+    let testQueue = new Queue();
+    testQueue.enqueue('rat');
+    testQueue.enqueue('mouse');
+    expect(testQueue.peek()).toEqual('rat');
+  });
+
+
+  test('can tell if queue is empty', () => {
+    let emptyQueue = new Queue();
+    expect(emptyQueue.isEmpty()).toBeTruthy();
+
+    let testQueue = new Queue();
+    testQueue.enqueue('rat');
+    testQueue.enqueue('mouse');
+    expect(testQueue.isEmpty()).toBeFalsy();
+  });
 
 });
 

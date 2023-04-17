@@ -39,9 +39,11 @@ Using a Linked List as the underlying data storage mechanism, implement both a S
   - Create a Queue class that has a front property. It creates an empty Queue when instantiated.
   - This object should be aware of a default empty value assigned to front when the queue is created.
   - The class should contain the following methods:
+    DONE
     - enqueue
       - Arguments: value
       - adds a new node with that value to the back of the queue with an O(1) Time performance.
+    DONE
     - dequeue
       - Arguments: none
       - Returns: the value from node from the front of the queue
