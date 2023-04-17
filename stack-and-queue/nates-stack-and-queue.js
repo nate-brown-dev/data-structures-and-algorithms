@@ -171,10 +171,57 @@ class LinkedList {
 
 
 class Stack extends LinkedList {
+  constructor() {
+    super();
+    this.top = null;
+  }
 
+  push(data) {
+    const nodeToPush = new Node(data);
+    if (!this.top) {
+      this.top = nodeToPush;
+    } else {
+      let wasTop = this.top;
+      this.top = nodeToPush;
+      nodeToPush.next = wasTop;
+    }
+  }
+
+  pop() {
+    if (!this.top) {
+      return false;
+    } else {
+      let valToPop = this.top.value;
+      this.top.next = this.top;
+      return valToPop;
+    }
+  }
+
+  peek() {
+    if (!this.top) {
+      return false;
+    } else {
+      return this.top.value;
+    }
+  }
+
+  isEmpty() {
+    if (!this.top) {
+      return true;
+    } else {
+      return false;
+    }
+
+  }
 }
 
+class Queue extends LinkedList {
+  constructor() {
+    super();
+    this.top = null;
+  }
 
+}
 
 
 
