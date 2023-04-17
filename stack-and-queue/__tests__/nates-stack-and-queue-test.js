@@ -1,7 +1,7 @@
 'use strict';
 
 // const LinkedListSample = require('../linked-list-sample');
-const { LinkedList, Node, Stack, stackNode, Queue } = require('../nates-stack-and-queue');
+const { LinkedList, Node, Stack, stackNode, Queue, queueNode } = require('../nates-stack-and-queue');
 
 describe('Test Linked List data structure', () => {
   xtest('Can instatiate empty linked list', () => {
@@ -178,6 +178,36 @@ describe('Test Linked List data structure', () => {
     expect(emptyStack.isEmpty()).toBeTruthy();
     expect(testStack.isEmpty()).toBeFalsy();
   });
-  
+
+  test('can enqueue new node to empty queue', () => {
+    let emptyQueue = new Queue();
+    emptyQueue.enqueue('dog');
+    console.log(emptyQueue);
+    expect(emptyQueue.front.value).toEqual('dog');
+    expect(emptyQueue.back.value).toEqual('dog');
+  });
+
+  test('can enqueue new node to existing queue', () => {
+    let testQueue = new Queue();
+    testQueue.front = new queueNode('cat');
+    testQueue.enqueue('fish');
+    console.log(testQueue);
+    expect(testQueue.back.value).toEqual('fish');
+    expect(testQueue.front.value).toEqual('cat');
+  });
+
+  test('can dequeue and return value', () => {
+    let testQueue = new Queue();
+    testQueue.enqueue('rat');
+    testQueue.enqueue('mouse');
+    console.log(testQueue);
+    let deq = testQueue.dequeue();
+    console.log(deq);
+    console.log(testQueue);
+    expect(deq).toEqual('rat');
+    expect(testQueue.front.next).toBeNull();
+  });
+
+
 });
 

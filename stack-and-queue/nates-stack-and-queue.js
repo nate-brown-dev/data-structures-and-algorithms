@@ -222,20 +222,58 @@ class Stack {
   }
 }
 
-class Queue extends LinkedList {
-  constructor() {
-    super();
-    this.top = null;
+class queueNode {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
   }
-
 }
 
 
+class Queue {
+  constructor() {
+    this.front = null;
+    this.back = null;
+  }
+
+  enqueue(data) {
+    let nodeToEnq = new queueNode(data);
+    if (!this.front) {
+      this.front = nodeToEnq;
+    }
+    if (!this.back) {
+      this.back = nodeToEnq;
+    } else {
+      let current = this.back;
+      nodeToEnq.next = current;
+      this.front = current;
+      this.back = nodeToEnq;
+    }
+  }
+
+  dequeue() {
+    if (!this.front && this.back) {
+      console.error('empty queue');
+    }
+    else {
+      let current = this.back;
+      while(current.next != this.front ) {
+        current = current.next;
+      }
+      let deqVal = current.next.value;
+      current.next = null;
+      this.front = current;
+      return deqVal;
+    }
+  }
+
+}
 
 module.exports = {
   LinkedList,
   Node,
   Stack,
   stackNode,
-  Queue
+  Queue,
+  queueNode
 }
