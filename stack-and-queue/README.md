@@ -17,9 +17,11 @@ Using a Linked List as the underlying data storage mechanism, implement both a S
   - Create a Stack class that has a top property. It creates an empty Stack when instantiated.
   - This object should be aware of a default empty value assigned to top when the stack is created.
   - The class should contain the following methods:
+    DONE
     - push
       - Arguments: value
       - adds a new node with that value to the top of the stack with an O(1) Time performance.
+    DONE
     - pop
       - Arguments: none
       - Returns: the value from node from the top of the stack

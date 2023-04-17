@@ -157,5 +157,27 @@ describe('Test Linked List data structure', () => {
     expect(testStack.top.value).toEqual('vodka');
   });
 
+  test('can peek at value on top of stack', () => {
+    let testStack = new Stack();
+    testStack.top = new stackNode('birdbath');
+    testStack.top.next = new stackNode('vodka');
+    testStack.top.next.next = new stackNode('toothpick');
+    testStack.top.next.next.next = new stackNode('olives');
+    testStack.top.next.next.next.next = new stackNode('olive juice');
+    expect(testStack.peek()).toEqual('birdbath');
+  });
+
+  test('can tell if the stack is empty', () => {
+    let emptyStack = new Stack();
+    let testStack = new Stack();
+    testStack.top = new stackNode('birdbath');
+    testStack.top.next = new stackNode('vodka');
+    testStack.top.next.next = new stackNode('toothpick');
+    testStack.top.next.next.next = new stackNode('olives');
+    testStack.top.next.next.next.next = new stackNode('olive juice');
+    expect(emptyStack.isEmpty()).toBeTruthy();
+    expect(testStack.isEmpty()).toBeFalsy();
+  });
+  
 });
 

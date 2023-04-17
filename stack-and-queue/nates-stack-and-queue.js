@@ -194,6 +194,7 @@ class Stack {
 
   pop() {
     if (!this.top) {
+      console.error('empty stack');
       return false;
     } else {
       let valToPop = this.top.value;
@@ -204,6 +205,7 @@ class Stack {
 
   peek() {
     if (!this.top) {
+      console.error('nothing to see');
       return false;
     } else {
       return this.top.value;
