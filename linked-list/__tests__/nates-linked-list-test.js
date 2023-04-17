@@ -1,7 +1,7 @@
 'use strict';
 
 // const LinkedListSample = require('../linked-list-sample');
-const { LinkedList, Node } = require('../nates-linked-list');
+const { LinkedList, Node, zipLists } = require('../nates-linked-list');
 
 describe('Test Linked List data structure', () => {
   test('Can instatiate empty linked list', () => {
@@ -132,6 +132,23 @@ describe('Test Linked List data structure', () => {
     expect(testList.findKthFromEnd(2)).toEqual('toothpick');
     expect(testList.findKthFromEnd(4)).toEqual('birdbath');
     expect(testList.findKthFromEnd(10)).toBeFalsy();
+  });
+
+  test('Can zip two lists together', () => {
+    let testList = new LinkedList();
+    testList.head = new Node('birdbath');
+    testList.head.next = new Node('vodka');
+    testList.head.next.next = new Node('toothpick');
+    testList.head.next.next.next = new Node('olives');
+    testList.head.next.next.next.next = new Node('olive juice');
+    let zipList = new LinkedList();
+    zipList.head = new Node('whiskey');
+    zipList.head.next = new Node('bitters');
+    zipList.head.next.next = new Node('sugar cube');
+    zipList.head.next.next.next = new Node('ice');
+    zipList.head.next.next.next.next = new Node('orange peel');
+
+    console.log(zipLists(testList, zipList));
   });
 
 

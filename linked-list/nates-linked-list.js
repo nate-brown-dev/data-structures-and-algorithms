@@ -166,10 +166,26 @@ class LinkedList {
       return current.value;
     }
   }
-
 }
+
+function zipLists(list1, list2) {
+
+  let list1current = list1.head;
+  let list2current = list2.head;
+  while ( list1current && list2current ) {
+    let list1next = list1current.next;
+    let list2next = list2current.next;
+    list1current.next = list2next;
+    list2current.next = list1next;
+    list1current = list1current.next;
+    list2current = list2current.next;
+  }
+  return list1.collect();
+}
+
 
 module.exports = {
   LinkedList,
-  Node
+  Node,
+  zipLists
 }
