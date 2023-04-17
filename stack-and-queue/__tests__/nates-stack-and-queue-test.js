@@ -1,7 +1,7 @@
 'use strict';
 
 // const LinkedListSample = require('../linked-list-sample');
-const { LinkedList, Node, Stack, Queue } = require('../nates-linked-list');
+const { LinkedList, Node, Stack, Queue } = require('../nates-stack-and-queue');
 
 describe('Test Linked List data structure', () => {
   xtest('Can instatiate empty linked list', () => {
@@ -63,8 +63,8 @@ describe('Test Linked List data structure', () => {
     testList.head.next = new Node('vodka');
     testList.head.next.next = new Node('toothpick');
     expect(testList.collect()).toEqual(
-      ['birdbath','vodka','toothpick']
-      );
+      ['birdbath', 'vodka', 'toothpick']
+    );
   });
 
   xtest('Can add node to end of linked list', () => {
@@ -134,5 +134,17 @@ describe('Test Linked List data structure', () => {
     expect(testList.findKthFromEnd(10)).toBeFalsy();
   });
 
+  test('can log a stack', () => {
+    let testStack = new Stack();
+    testStack.top = new Node('birdbath');
+    testStack.top.next = new Node('vodka');
+    testStack.top.next.next = new Node('toothpick');
+    testStack.top.next.next.next = new Node('olives');
+    testStack.top.next.next.next.next = new Node('olive juice');
+
+    console.log(testStack);
+    testStack.push(new Node('ice'));
+    console.log(testStack);
+  });
 
 })
