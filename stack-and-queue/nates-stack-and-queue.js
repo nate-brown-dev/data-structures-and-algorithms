@@ -170,20 +170,25 @@ class LinkedList {
 }
 
 
-class Stack extends LinkedList {
+class stackNode {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class Stack {
   constructor() {
-    super();
     this.top = null;
   }
 
   push(data) {
-    const nodeToPush = new Node(data);
+    let nodeToPush = new stackNode(data);
     if (!this.top) {
       this.top = nodeToPush;
     } else {
-      let wasTop = this.top;
+      nodeToPush.next = this.top;
       this.top = nodeToPush;
-      nodeToPush.next = wasTop;
     }
   }
 
@@ -192,7 +197,7 @@ class Stack extends LinkedList {
       return false;
     } else {
       let valToPop = this.top.value;
-      this.top.next = this.top;
+      this.top = this.top.next;
       return valToPop;
     }
   }
@@ -229,5 +234,6 @@ module.exports = {
   LinkedList,
   Node,
   Stack,
+  stackNode,
   Queue
 }

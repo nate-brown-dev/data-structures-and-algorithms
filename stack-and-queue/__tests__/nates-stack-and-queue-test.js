@@ -1,7 +1,7 @@
 'use strict';
 
 // const LinkedListSample = require('../linked-list-sample');
-const { LinkedList, Node, Stack, Queue } = require('../nates-stack-and-queue');
+const { LinkedList, Node, Stack, stackNode, Queue } = require('../nates-stack-and-queue');
 
 describe('Test Linked List data structure', () => {
   xtest('Can instatiate empty linked list', () => {
@@ -134,17 +134,28 @@ describe('Test Linked List data structure', () => {
     expect(testList.findKthFromEnd(10)).toBeFalsy();
   });
 
-  test('can log a stack', () => {
+  test('can push new node onto top of stack', () => {
     let testStack = new Stack();
-    testStack.top = new Node('birdbath');
-    testStack.top.next = new Node('vodka');
-    testStack.top.next.next = new Node('toothpick');
-    testStack.top.next.next.next = new Node('olives');
-    testStack.top.next.next.next.next = new Node('olive juice');
-
-    console.log(testStack);
-    testStack.push(new Node('ice'));
-    console.log(testStack);
+    testStack.top = new stackNode('birdbath');
+    testStack.top.next = new stackNode('vodka');
+    testStack.top.next.next = new stackNode('toothpick');
+    testStack.top.next.next.next = new stackNode('olives');
+    testStack.top.next.next.next.next = new stackNode('olive juice');
+    testStack.push('ice');
+    expect(testStack.top.value).toEqual('ice');
   });
 
-})
+  test('can pop node from top of stack and return popped value', () => {
+    let testStack = new Stack();
+    testStack.top = new stackNode('birdbath');
+    testStack.top.next = new stackNode('vodka');
+    testStack.top.next.next = new stackNode('toothpick');
+    testStack.top.next.next.next = new stackNode('olives');
+    testStack.top.next.next.next.next = new stackNode('olive juice');
+    let poppedValue = testStack.pop();
+    expect(poppedValue).toEqual('birdbath');
+    expect(testStack.top.value).toEqual('vodka');
+  });
+
+});
+
