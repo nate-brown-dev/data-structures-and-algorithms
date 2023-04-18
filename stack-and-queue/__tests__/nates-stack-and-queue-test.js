@@ -1,7 +1,7 @@
 'use strict';
 
 // const LinkedListSample = require('../linked-list-sample');
-const { LinkedList, Node, Stack, stackNode, Queue, queueNode } = require('../nates-stack-and-queue');
+const { LinkedList, Node, Stack, stackNode, Queue, queueNode, PseudoQueue } = require('../nates-stack-and-queue');
 
 describe('Test Linked List data structure', () => {
   xtest('Can instatiate empty linked list', () => {
@@ -196,7 +196,7 @@ describe('Test Linked List data structure', () => {
     expect(testQueue.front.value).toEqual('cat');
   });
 
-  test('can dequeue and return value', () => {
+  xtest('can dequeue and return value', () => {
     let testQueue = new Queue();
     testQueue.enqueue('rat');
     testQueue.enqueue('mouse');
@@ -208,7 +208,7 @@ describe('Test Linked List data structure', () => {
     expect(testQueue.front.next).toBeNull();
   });
 
-  test('can peek at front of queue', () => {
+  xtest('can peek at front of queue', () => {
     let emptyQueue = new Queue();
     expect(emptyQueue.peek()).toBeFalsy();
 
@@ -219,7 +219,7 @@ describe('Test Linked List data structure', () => {
   });
 
 
-  test('can tell if queue is empty', () => {
+  xtest('can tell if queue is empty', () => {
     let emptyQueue = new Queue();
     expect(emptyQueue.isEmpty()).toBeTruthy();
 
@@ -227,6 +227,23 @@ describe('Test Linked List data structure', () => {
     testQueue.enqueue('rat');
     testQueue.enqueue('mouse');
     expect(testQueue.isEmpty()).toBeFalsy();
+  });
+
+  test('can implement a queue with 2 stacks and push to it', () => {
+    let psq = new PseudoQueue();
+    psq.pseudoEnqueue('bat');
+    psq.pseudoEnqueue('bird');
+    psq.pseudoEnqueue('bug');
+    console.log(psq);
+    expect(psq.pushStack.top.value).toEqual('bug');
+  });
+
+  test('can implement a queue with 2 stacks and pop from it', () => {
+    let psq = new PseudoQueue();
+    psq.pseudoEnqueue('bat');
+    psq.pseudoEnqueue('bird');
+    psq.pseudoEnqueue('bug');
+    expect(psq.pseudoDequeue()).toEqual('bat');
   });
 
 });

@@ -220,6 +220,32 @@ class Stack {
     }
 
   }
+
+
+}
+
+class PseudoQueue {
+  constructor() {
+    this.popStack = new Stack();
+    this.pushStack = new Stack();
+  }
+
+  pseudoEnqueue(data) {
+    this.pushStack.push(data);
+  }
+
+  pseudoDequeue() {
+    if (!this.pushStack.top) { return false }
+    else {
+      let current = this.pushStack.top;
+      while (current) {
+        this.popStack.push(current.value);
+        current = current.next;
+      }
+    }
+    let popVal = this.popStack.pop();
+    return popVal;
+  }
 }
 
 class queueNode {
@@ -257,7 +283,7 @@ class Queue {
     }
     else {
       let current = this.back;
-      while(current.next != this.front ) {
+      while (current.next != this.front) {
         current = current.next;
       }
       let deqVal = current.next.value;
@@ -292,5 +318,6 @@ module.exports = {
   Stack,
   stackNode,
   Queue,
-  queueNode
+  queueNode,
+  PseudoQueue,
 }
