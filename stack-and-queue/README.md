@@ -4,7 +4,7 @@
 
 ### Challenge Type: New Implementation
 
-![Animal Shelter Whiteboard](./stack-queue-animal-whiteboard.png)
+![Animal Shelter Whiteboard](./stack-queue-animal-shelter.png)
 
 #### Features
 
