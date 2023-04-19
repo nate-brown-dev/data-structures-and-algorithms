@@ -1,10 +1,10 @@
 # Specifications
 
-## Branch Name: stack-queue-pseudo
+## Branch Name: stack-queue-animal-shelter
 
 ### Challenge Type: New Implementation
 
-![Pseudo Queue Whiteboard](./pseudo_queue_whiteboard.png)
+![Animal Shelter Whiteboard](./stack-queue-animal-whiteboard.png)
 
 #### Features
 
@@ -15,30 +15,19 @@ Branch Name: stack-queue-pseudo
 Challenge Type: Code Challenge / Algorithm
 
 - Feature Tasks
-  - Create a new class called pseudo queue.
-  - Do not use an existing Queue.
-  - Instead, this PseudoQueue class will implement our standard queue interface (the two methods listed below),
-  - Internally, utilize 2 Stack instances to create and manage the queue
-  - Methods:
+  - Create a class called AnimalShelter which holds only dogs and cats.
+  - The shelter operates using a first-in, first-out approach.
+  - Implement the following methods:
     - enqueue
-      - Arguments: value
-      - Inserts a value into the PseudoQueue, using a first-in, first-out approach.
+      - Arguments: animal
+        - animal can be either a dog or a cat object.
+      - It must have a species property that is either "cat" or "dog"
+      - It must have a name property that is a string.
     - dequeue
-      - Arguments: none
-      - Extracts a value from the PseudoQueue, using a first-in, first-out approach.
-      - NOTE: The Stack instances have only push, pop, and peek methods. You should use your own Stack implementation
-    - Instantiate these Stack objects in your PseudoQueue constructor.
-
-Example
-enqueue(value)
-Input	Args	Internal State
-[10]->[15]->[20]	5	[5]->[10]->[15]->[20]
- 	5	[5]
-
-dequeue()
-Input	Output	Internal State
-[5]->[10]->[15]->[20]	20	[5]->[10]->[15]
-[5]->[10]->[15]	15	[5]->[10]
+      - Arguments: pref
+        - pref can be either "dog" or "cat"
+      - Return: either a dog or a cat, based on preference.
+      - If pref is not "dog" or "cat" then return null.
 
 #### Structure and Testing
 
@@ -50,10 +39,9 @@ Any exceptions or errors that come from your code should be contextual, descript
 
 #### Write tests to prove the following functionality
 
-DONE
+Can accept donated animal and push to appropriate stack
+Can accept preference input for adoption and return animal of correct species
+Can return NULL if no preference
+Can return error if no animals of preferred type available
 
-Can push to pseudo queue
-
-DONE
-
-Can pop from pseudo queue
+stretch goal: can return oldest animal if no preference specified
