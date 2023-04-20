@@ -2,34 +2,43 @@
 
 ## Branch Name: stack-queue-brackets
 
+### Challenge Type: New Implementation: Multi-Bracket Validation
 
-
-### Challenge Type: New Implementation
-
-![Animal Shelter Whiteboard](./stack-queue-animal-shelter.png)
+![Bracket Balance Whiteboard](./bracket-balance-whiteboard.png)
 
 #### Features
 
-Challenge Setup & Execution
-
-Branch Name: stack-queue-pseudo
-
 Challenge Type: Code Challenge / Algorithm
 
+### Challenge Setup & Execution
+
 - Feature Tasks
-  - Create a class called AnimalShelter which holds only dogs and cats.
-  - The shelter operates using a first-in, first-out approach.
-  - Implement the following methods:
-    - enqueue
-      - Arguments: animal
-        - animal can be either a dog or a cat object.
-      - It must have a species property that is either "cat" or "dog"
-      - It must have a name property that is a string.
-    - dequeue
-      - Arguments: pref
-        - pref can be either "dog" or "cat"
-      - Return: either a dog or a cat, based on preference.
-      - If pref is not "dog" or "cat" then return null.
+  - Write a function called validate brackets
+  - Arguments: string
+  - Return: boolean representing whether or not the brackets in the string are balanced
+
+There are 3 types of brackets:
+
+- Round Brackets : ()
+- Square Brackets : []
+- Curly Brackets : {}
+
+Example
+Input	Output
+{}	TRUE
+{}(){}	TRUE
+()[[Extra Characters]]	TRUE
+(){}[[]]	TRUE
+{}{Code}[Fellows](())	TRUE
+[({}]	FALSE
+(](	FALSE
+{(})	FALSE
+Consider these small examples and why they fail.
+
+Input	Output	Why
+{	FALSE	error unmatched opening { remaining.
+)	FALSE	error closing ) arrived without corresponding opening.
+[}	FALSE	error closing }. Doesn’t match opening (.
 
 #### Structure and Testing
 
@@ -41,9 +50,6 @@ Any exceptions or errors that come from your code should be contextual, descript
 
 #### Write tests to prove the following functionality
 
-Can accept donated animal and push to appropriate stack
-Can accept preference input for adoption and return animal of correct species
-Can return NULL if no preference
-Can return error if no animals of preferred type available
-
-stretch goal: can return oldest animal if no preference specified
+Can return true if brackets match
+Can return false if brackets don't match
+Can return false if there are lone unmatched brackets
