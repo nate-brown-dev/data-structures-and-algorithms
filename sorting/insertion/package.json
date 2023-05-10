@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "jest": "^29.5.0"
+  },
+  "name": "insertion",
+  "description": "## Assignment",
+  "version": "1.0.0",
+  "main": "sort.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}
