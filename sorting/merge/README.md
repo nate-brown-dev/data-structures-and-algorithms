@@ -6,6 +6,11 @@ Review the pseudocode below, then trace the algorithm by stepping through the pr
 
 Once you are done with your article, code a working, tested implementation of Merge Sort based on the pseudocode provided.
 
+
+## Whiteboard
+
+![merge sort whiteboard](./merge-sort-whiteboard.png)
+
 ## Pseudo Code
 
 ALGORITHM Mergesort(arr)
