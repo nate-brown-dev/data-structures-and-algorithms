@@ -9,7 +9,9 @@ console.log(moviesArray);
 function sortYear(arr) {
   let n = arr.length;
   let j = 0;
+  let changeFlag = false;
   for ( let i = 0; i < n; i++ ) {
+    let changeFlag = false;
     let left = arr[j]
     let right = arr[j+1]
     // console.log(left);
@@ -18,8 +20,12 @@ function sortYear(arr) {
       arr[j] = right;
       arr[j+1] = left;
       j++;
+      changeFlag = true;
     } else {
     j++;
+    }
+    if (changeFlag) {
+      sortYear(arr);
     }
   }
   // sort code here
@@ -32,7 +38,9 @@ console.log(sortYear(moviesArray));
 function sortTitle(arr) {
   let n = arr.length;
   let j = 0;
+  let changeFlag = false;
   for ( let i = 0; i < n; i++ ) {
+    let changeFlag = false;
     let left = arr[j]
     let right = arr[j+1]
     // console.log(left);
@@ -41,8 +49,12 @@ function sortTitle(arr) {
       arr[j] = right;
       arr[j+1] = left;
       j++;
+      changeFlag = true;
     } else {
     j++;
+    }
+    if (changeFlag) {
+      sortTitle(arr)
     }
   }
   // sort code here
