@@ -9,7 +9,6 @@ console.log(moviesArray);
 function sortYear(arr) {
   let n = arr.length;
   let j = 0;
-  let changeFlag = false;
   for ( let i = 0; i < n; i++ ) {
     let changeFlag = false;
     let left = arr[j]
@@ -38,7 +37,6 @@ console.log(sortYear(moviesArray));
 function sortTitle(arr) {
   let n = arr.length;
   let j = 0;
-  let changeFlag = false;
   for ( let i = 0; i < n; i++ ) {
     let changeFlag = false;
     let left = arr[j]
