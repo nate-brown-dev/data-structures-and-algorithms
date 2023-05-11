@@ -10,32 +10,46 @@ let value;
 
 let temp;
 
-function insert(sorted, value) {
+function merge(left, right, input) {
   let i = 0;
-  while (value > sorted[i]) {
-    i++;
-    while (i < sorted.length) {
-      let temp = sorted[i];
-      sorted[i] = value;
-      value = temp;
-      i++;
-    }
-    sorted[i] = value;
-  }
+  let j = 0;
+  let k = 0;
+
+  while (i < left.length && j < right.length) {
+    if (left[i] <= right[j]) {
+
+
 }
 
-function insertionSort(input) {
+function mergeSort(input) {
+  let n = input.length;
   let sorted = [];
-  sorted[0] = input[0];
-  for (let i = 1; i < input.length; i++) {
-    insert(sorted, input[i]);
+  let mid;
+  let left = [];
+  let right = [];
+  if (input.length % 2 === 0) {
+    mid = input.length / 2;
+  } else {
+    mid = Math.floor(input.length / 2);
   }
-  return sorted;
+  left = input[0, ...mid-1];
+  right = input[mid, ...n];
+
+  console.log(left);
+  console.log(right);
+
+  mergeSort(left);
+
+  mergeSort(right);
+
+  merge(left, right, input);
+
+  // return sorted;
 }
 
 // console.log(insertionSort(input));
 
 module.exports = {
-  insert,
-  insertionSort
+  merge,
+  mergeSort
 };
