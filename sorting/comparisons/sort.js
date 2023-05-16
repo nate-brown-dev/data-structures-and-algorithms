@@ -5,7 +5,7 @@ const moviesObject = require('./movies');
 const moviesArray = moviesObject.Movies;
 
 console.log(moviesArray);
-
+444.
 function sortYear(arr) {
   let n = arr.length;
   let j = 0;
@@ -39,10 +39,17 @@ function sortTitle(arr) {
   let j = 0;
   for ( let i = 0; i < n; i++ ) {
     let changeFlag = false;
-    let left = arr[j]
-    let right = arr[j+1]
+    let left = arr[j];
+    let right = arr[j+1];
     // console.log(left);
     // console.log(right);
+
+    // let leftTitle = left.title;
+    // if (right) { let rightTitle = right.title }
+    // if (leftTitle.charAt(3) === ' ') { leftTitle = str.slice(leftTitle(4)) }
+    // // console.log(leftTitle);
+    // if (right && rightTitle.charAt(3) === ' ') { rightTitle = str.slice(rightTitle(4)) }
+
     if ( right && left.title > right.title ) {
       arr[j] = right;
       arr[j+1] = left;
