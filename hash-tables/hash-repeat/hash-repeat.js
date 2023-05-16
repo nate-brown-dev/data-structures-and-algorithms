@@ -12,15 +12,6 @@ function removePunctuation(str) {
   return newStr;
 }
 
-// let firstStringMod = removePunctuation(firstString);
-// // console.log(firstStringMod);
-
-// let firstStringArray = firstStringMod.split(" ");
-// // console.log(firstStringArray);
-
-
-// let testTable = new HashTable(10);
-
 function checkForDuplicates(table, arr) {
   for (let word of arr) {
     let position = table.hash(word)
@@ -47,6 +38,3 @@ module.exports = {
   removePunctuation,
   checkForDuplicates
 };
-
-
-// console.log(checkForDuplicates(testTable, firstStringArray));

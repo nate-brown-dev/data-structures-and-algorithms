@@ -1,5 +1,9 @@
 # Challenge 30: Hash Table Implementation
 
+## Whiteboard
+
+![Hash Table Whiteboard](./hash-table-whiteboard.png)
+
 ## Challenge Setup & Execution
 
 Branch Name: hashtable
@@ -41,11 +45,18 @@ Any exceptions or errors that come from your code should be contextual, descript
 
 ## Write tests to prove the following functionality:
 
-Setting a key/value to your hashtable results in the value being in the data structure
-Retrieving based on a key returns the value stored
-Successfully returns null for a key that does not exist in the hashtable
-Successfully returns a list of all unique keys that exist in the hashtable
-Successfully handle a collision within the hashtable
-Successfully retrieve a value from a bucket within the hashtable that has a collision
-Successfully hash a key to an in-range value
+// DONE // Setting a key/value to your hashtable results in the value being in the data structure
+
+// DONE // Retrieving based on a key returns the value stored
+
+// DONE // Successfully returns null for a key that does not exist in the hashtable
+
+// DONE // Successfully returns a list of all unique keys that exist in the hashtable
+
+// DONE // Successfully handle a collision within the hashtable
+
+// DONE // Successfully retrieve a value from a bucket within the hashtable that has a collision
+
+// DONE // Successfully hash a key to an in-range value
+
 Ensure your tests are passing before you submit your solution.

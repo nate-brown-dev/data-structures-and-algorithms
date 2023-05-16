@@ -42,7 +42,7 @@ class HashTable {
   get(key) {
     let position = this.hash(key);
     if (!this.buckets[position]) {
-      return false;
+      return null;
     } else {
       let current = this.buckets[position].head;
       while (current) {
@@ -52,6 +52,7 @@ class HashTable {
           current = current.next;
         }
       }
+      return null;
     }
   }
 
@@ -92,26 +93,5 @@ class HashTable {
   };
 
 }
-
-
-let table = new HashTable(10);
-
-// let position = table.hash('name');
-// console.log(position);
-
-
-// table.set('man', 'Nate');
-// table.set('woman', 'Agnieszka');
-// console.log(JSON.stringify(table.buckets));
-// // console.log(table.buckets[position]);
-
-// console.log(table.get('man'));
-// console.log(table.get('woman'));
-
-// console.log(table.has('man'));
-// console.log(table.has('woman'));
-
-// console.log(table.keys());
-
 
 module.exports = HashTable;
