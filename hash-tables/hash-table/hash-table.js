@@ -1,6 +1,6 @@
 'use strict';
 
-const LinkedList = require('./LinkedList');
+const LinkedList = require('./linked-list');
 
 class HashTable {
   constructor(size) {
@@ -28,7 +28,7 @@ class HashTable {
       this.buckets[position] = new LinkedList();
     }
 
-    let entry = {[key]: value}
+    let entry = { [key]: value }
     this.buckets[position].add(entry);
   }
 
@@ -36,9 +36,23 @@ class HashTable {
    * @param {string} key
    */
   get(key) {
+    let position = this.hash(key);
+    if (!this.buckets[position]) {
+      return false;
+    } else {
+      let current = this.buckets[position].head;
+      while (current) {
+        if (current.value[key]) {
+          return current.value[key];
+        } else {
+          current = current.next;
+        }
+      }
+    }
 
   }
 }
+
 
 let table = new HashTable(10);
 
@@ -46,7 +60,10 @@ let table = new HashTable(10);
 // console.log(position);
 
 
-table.set('name', 'Jacob');
-table.set('name', 'JB');
+table.set('man', 'Nate');
+table.set('woman', 'Agnieszka');
 console.log(JSON.stringify(table.buckets));
-console.log(table.buckets[position]);
+// console.log(table.buckets[position]);
+
+console.log(table.get('man'));
+console.log(table.get('woman'));
