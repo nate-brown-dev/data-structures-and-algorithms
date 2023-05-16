@@ -49,8 +49,41 @@ class HashTable {
         }
       }
     }
-
   }
+
+  has(key) {
+    let position = this.hash(key);
+    if (!this.buckets[position]) {
+      return false;
+    } else {
+      let current = this.buckets[position].head;
+      while (current) {
+        if (current.value[key]) {
+          return true;
+        } else {
+          current = current.next;
+        }
+      }
+    }
+  }
+
+  // returns array of keys
+  keys() {
+    let ARRAY_OF_KEYS = [];
+    for (let i in this.buckets) {
+      if ( !this.buckets[i] ) {
+        continue;
+      } else {
+        let current = this.buckets[i].head;
+        while ( current ) {
+          ARRAY_OF_KEYS.push(Object.keys(current.value)[0]);
+          current = current.next
+        }
+      }
+    }
+    return ARRAY_OF_KEYS;
+  };
+
 }
 
 
@@ -67,3 +100,8 @@ console.log(JSON.stringify(table.buckets));
 
 console.log(table.get('man'));
 console.log(table.get('woman'));
+
+console.log(table.has('man'));
+console.log(table.has('woman'));
+
+console.log(table.keys());

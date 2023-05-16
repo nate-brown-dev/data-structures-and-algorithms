@@ -16,15 +16,15 @@ Implement a Hashtable Class with the following methods:
   - This method should hash the key, and set the key and value pair in the table, handling collisions as needed.
   - Should a given key already exist, replace its value from the value argument given to this method.
 
-- get
+- get (DONE)
   - Arguments: key
   - Returns: Value associated with that key in the table
 
-- has
+- has (DONE)
   - Arguments: key
   - Returns: Boolean, indicating if the key exists in the table already.
 
-- keys
+- keys (DONE)
   - Returns: Collection of keys
 
 - hash (DONE)
