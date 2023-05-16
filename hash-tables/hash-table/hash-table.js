@@ -35,6 +35,10 @@ class HashTable {
   /**
    * @param {string} key
    */
+
+  // search the table for a key to get its value
+  // return value of key-value pair if IS in table
+  // return false if IS NOT in table
   get(key) {
     let position = this.hash(key);
     if (!this.buckets[position]) {
@@ -51,6 +55,9 @@ class HashTable {
     }
   }
 
+  // checks to see if the table contains a given key
+  // return false if key IS NOT in table
+  // return true if key IS in table
   has(key) {
     let position = this.hash(key);
     if (!this.buckets[position]) {
@@ -77,7 +84,7 @@ class HashTable {
         let current = this.buckets[i].head;
         while ( current ) {
           ARRAY_OF_KEYS.push(Object.keys(current.value)[0]);
-          current = current.next
+          current = current.next;
         }
       }
     }
@@ -93,15 +100,18 @@ let table = new HashTable(10);
 // console.log(position);
 
 
-table.set('man', 'Nate');
-table.set('woman', 'Agnieszka');
-console.log(JSON.stringify(table.buckets));
-// console.log(table.buckets[position]);
+// table.set('man', 'Nate');
+// table.set('woman', 'Agnieszka');
+// console.log(JSON.stringify(table.buckets));
+// // console.log(table.buckets[position]);
 
-console.log(table.get('man'));
-console.log(table.get('woman'));
+// console.log(table.get('man'));
+// console.log(table.get('woman'));
 
-console.log(table.has('man'));
-console.log(table.has('woman'));
+// console.log(table.has('man'));
+// console.log(table.has('woman'));
 
-console.log(table.keys());
+// console.log(table.keys());
+
+
+module.exports = HashTable;
