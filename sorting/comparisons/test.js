@@ -3,6 +3,7 @@ const { sortTitle, sortYear } = require("./sort");
 
 describe("Sorters", () => {
   it("can sort movies by year", () => {
+    console.log(Movies);
     const movies = sortYear(Movies);
     expect(movies.map((m) => m.title)).toEqual([
       "The Intouchables",
