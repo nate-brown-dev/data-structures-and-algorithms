@@ -54,7 +54,7 @@ A collection of all nodes can be properly retrieved from the graph
 // DONE
 All appropriate neighbors can be retrieved from the graph
 
-// SKIPPED
+// DONE
 Neighbors are returned with the weight between nodes included
 
 // DONE
