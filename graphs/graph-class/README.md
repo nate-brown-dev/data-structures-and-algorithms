@@ -8,6 +8,10 @@ Branch Name: graph
 
 Challenge Type: New Implementation
 
+### Whiteboard
+
+![Graph Class Whiteboard](graph-class-whiteboard.png)
+
 ### Features
 
 Implement your own Graph. The graph should be represented as an adjacency list, and should include the following methods:
@@ -16,33 +20,25 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
   - Arguments: value
   - Returns: The added node
   - Add a node to the graph
-- add edge
+- add edge // DONE
   - Arguments: 2 nodes to be connected by the edge, weight (optional)
   - Returns: nothing
   - Adds a new edge between two nodes in the graph
   - If specified, assign a weight to the edge
   - Both nodes should already be in the Graph
-- get nodes
+- get nodes // DONE
   - Arguments: none
   - Returns all of the nodes in the graph as a collection (set, list, or similar)
   - Empty collection returned if there are no nodes
-- get neighbors
+- get neighbors // DONE
   - Arguments: node
   - Returns a collection of edges connected to the given node
   - Include the weight of the connection in the returned collection
   - Empty collection returned if there are no nodes
-- size
+- size // DONE
   - Arguments: none
   - Returns the total number of nodes in the graph
   - 0 if there are none
-
-### Structure and Testing
-
-Utilize the Single-responsibility principle: any methods you write should be clean, reusable, abstract component parts to the whole challenge. You will be given feedback and marked down if you attempt to define a large, complex algorithm in one function definition.
-
-Be sure to follow your language/frameworks standard naming conventions (e.g. C# uses PascalCasing for all method and class names).
-
-Any exceptions or errors that come from your code should be contextual, descriptive, capture-able errors. For example, rather than a default error thrown by your language, your code should raise/throw a custom error that describes what went wrong in calling the methods you wrote for this lab.
 
 ### Write tests to prove the following functionality:
 
