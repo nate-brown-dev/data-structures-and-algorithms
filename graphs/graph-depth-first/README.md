@@ -4,7 +4,7 @@ Conduct a depth first pre-order traversal on a graph
 
 ## Whiteboard
 
-![Graph depth first whiteboard](./graph-depth-first-whiteboard.png)
+![Graph depth first whiteboard](./graph-depth-first.png)
 
 ## Challenge Setup & Execution
 
