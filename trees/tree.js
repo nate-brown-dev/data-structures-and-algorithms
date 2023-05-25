@@ -15,4 +15,3 @@ class Tree {
     this.root = null;
   }
 }
-

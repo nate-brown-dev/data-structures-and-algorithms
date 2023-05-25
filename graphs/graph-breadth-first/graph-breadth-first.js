@@ -9,6 +9,7 @@ class BreadthFirst extends Graph {
   // it also stores anand an array of values listing the visited nodes in order
 
   breadthFirst(node) {
+    
     let visitedNodesArray = [];
 
   }
