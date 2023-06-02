@@ -2,6 +2,10 @@
 
 Implement a breadth-first traversal on a graph.
 
+## Whiteboard
+
+![graph breadth first whiteboard](./graph-breadth-whiteboard.png)
+
 ## Challenge Type: Extending an Implementation
 
 ### Feature Tasks
