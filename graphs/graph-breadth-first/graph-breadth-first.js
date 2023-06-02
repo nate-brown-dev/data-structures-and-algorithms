@@ -65,6 +65,8 @@ class Queue {
 }
 
 
+// graph class
+
 class Graph {
   constructor() {
     this.adjacencyList = {};
@@ -83,6 +85,11 @@ class Graph {
     }
   }
 
+
+// breadth first method
+// requires a queue and an array
+// returns the array (visted nodes in order)
+
   breadthFirstTraversal(startNode) {
     const visited = [];
     const queue = new Queue();
@@ -94,7 +101,7 @@ class Graph {
       const tempNode = queue.dequeue();
       console.log(tempNode);
 
-      for (let neighbor of this.adjacencyList[node]) {
+      for (let neighbor of this.adjacencyList[tempNode]) {
         if (!visited.includes(neighbor)) {
           queue.enqueue(neighbor);
           visited.push(neighbor);
@@ -106,3 +113,8 @@ class Graph {
   }
 }
 
+module.exports = {
+  queueNode,
+  Queue,
+  Graph
+}
