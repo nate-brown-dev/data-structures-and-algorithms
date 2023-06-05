@@ -92,18 +92,18 @@ class Graph {
 
   breadthFirstTraversal(startNode) {
     const visited = [];
-    const queue = new Queue();
+    const queue = [];
 
-    queue.enqueue(startNode);
+    queue.push(startNode);
     visited.push(startNode);
 
-    while ( !queue.isEmpty() ) {
-      const tempNode = queue.dequeue();
+    while ( !queue === [] ) {
+      const tempNode = queue.shift();
       console.log(tempNode);
 
       for (let neighbor of this.adjacencyList[tempNode]) {
         if (!visited.includes(neighbor)) {
-          queue.enqueue(neighbor);
+          queue.push(neighbor);
           visited.push(neighbor);
         }
       }

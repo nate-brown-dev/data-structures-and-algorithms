@@ -21,16 +21,16 @@ class Graph {
   // each node has an array of adjacent nodes
   // an undirected edge links both nodes to each other
   // when the edge is defined, each node adds the other to its adjacency list
-  addEdge(source, destination) {
-    this.adjacencyList[source].push(destination);
-    this.adjacencyList[destination].push(source);
+  addEdge(source, destination, weight) {
+    this.adjacencyList[source].push({ "city": destination, "distance": weight });
+    this.adjacencyList[destination].push({ "city": source, "distance": weight });
   }
 
   // method to get all the nodes
   // in a graph the nodes correspond to the keys of the adjacency list
   // this method returns all nodes, even those that do not have edges
   getAllNodes() {
-    return(Object.keys(this.adjacencyList));
+    return (Object.keys(this.adjacencyList));
   }
 
   // method to get all neighboring nodes for a given node
@@ -43,39 +43,32 @@ class Graph {
   // method to count the number of nodes in the graph
   // the number of nodes is equal to the number of keys in the adjacency list
   countSize() {
-    return(Object.keys(this.adjacencyList).length)
+    return (Object.keys(this.adjacencyList).length)
   }
 
-}
+  breadthFirstTraversal(startNode) {
+    const visited = [];
+    const queue = [];
 
-// function to traverse the graph depth first
-// console log each visited node
-// return set of visited nodes
+    queue.push(startNode);
+    visited.push(startNode);
 
-function depthFirstTraversal(graph, startNode) {
-  const stack = [startNode];
-  const visited = [];
+    while (!queue.isEmpty()) {
+      const tempNode = queue.shift();
+      console.log(tempNode);
 
-  while (stack.length > 0) {
-    const currentNode = stack.pop();
-
-    if (!visited.includes(currentNode)) {
-      visited.push(currentNode);
-      console.log(currentNode); // Process the vertex
-
-      const neighbors = graph.adjacencyList[currentNode];
-      for (let i = neighbors.length - 1; i >= 0; i--) {
-        const neighbor = neighbors[i];
+      for (let neighbor of this.adjacencyList[tempNode]) {
         if (!visited.includes(neighbor)) {
-          stack.push(neighbor);
+          queue.push(neighbor);
+          visited.push(neighbor);
         }
       }
     }
+
+    return visited;
   }
-  return visited;
 }
 
 module.exports = {
-  Graph,
-  depthFirstTraversal
-};
+  Graph
+}
