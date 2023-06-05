@@ -27,7 +27,6 @@ describe('test graph breadth first traversal', () => {
     breadthGraph.addEdge("Monster", "Naboo");
     breadthGraph.addEdge("Narnia", "Naboo");
     console.log(breadthGraph);
-
     console.log(breadthGraph.breadthFirstTraversal("Pandora"));
   });
 

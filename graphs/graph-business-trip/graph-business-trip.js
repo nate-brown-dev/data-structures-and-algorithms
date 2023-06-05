@@ -1,109 +1,65 @@
-// queue class for traversal
+'use strict';
 
-class queueNode {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
-  }
-}
-
-
-class Queue {
-  constructor() {
-    this.front = null;
-    this.back = null;
-  }
-
-  enqueue(data) {
-    let nodeToEnq = new queueNode(data);
-    if (!this.front) {
-      this.front = nodeToEnq;
-    }
-    if (!this.back) {
-      this.back = nodeToEnq;
-    } else {
-      let current = this.back;
-      nodeToEnq.next = current;
-      this.front = current;
-      this.back = nodeToEnq;
-    }
-  }
-
-  dequeue() {
-    if (!this.front && this.back) {
-      console.error('empty queue');
-    }
-    else {
-      let current = this.back;
-      while (current.next != this.front) {
-        current = current.next;
-      }
-      let deqVal = current.next.value;
-      current.next = null;
-      this.front = current;
-      return deqVal;
-    }
-  }
-
-  peek() {
-    if (!this.front && !this.back) {
-      return false;
-    }
-    else {
-      return this.front.value;
-    }
-  }
-
-  isEmpty() {
-    if (!this.front && !this.back) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-}
-
-
-// graph class
+// previously written graph class
 
 class Graph {
+
+  // the adjacency list is an object consisting of key-value pairs
+  // each key is a node
+  // the value for each key is a list of the nodes to which the key is connected by an edge
   constructor() {
     this.adjacencyList = {};
   }
 
+  // method to add a node
+  // the new node has no edges
   addNode(node) {
-    if (!this.adjacencyList[node]) {
-      this.adjacencyList[node] = [];
-    }
+    this.adjacencyList[node] = [];
   }
 
-  addEdge(node1, node2) {
-    if (this.adjacencyList[node1] && this.adjacencyList[node1]) {
-      this.adjacencyList[node1].push(node2);
-      this.adjacencyList[node2].push(node1);
-    }
+  // method to add an edge connecting two nodes
+  // each node has an array of adjacent nodes
+  // an undirected edge links both nodes to each other
+  // when the edge is defined, each node adds the other to its adjacency list
+  addEdge(source, destination, weight) {
+    this.adjacencyList[source].push({ "city": destination, "distance": weight });
+    this.adjacencyList[destination].push({ "city": source, "distance": weight });
   }
 
+  // method to get all the nodes
+  // in a graph the nodes correspond to the keys of the adjacency list
+  // this method returns all nodes, even those that do not have edges
+  getAllNodes() {
+    return (Object.keys(this.adjacencyList));
+  }
 
-// breadth first method
-// requires a queue and an array
-// returns the array (visted nodes in order)
+  // method to get all neighboring nodes for a given node
+  // the neighboring nodes are any node connected to the given node by an edge
+  // the adjacency list for the given node is an array of neighboring nodes
+  getNeighborNodes(node) {
+    return this.adjacencyList[node];
+  }
+
+  // method to count the number of nodes in the graph
+  // the number of nodes is equal to the number of keys in the adjacency list
+  countSize() {
+    return (Object.keys(this.adjacencyList).length)
+  }
 
   breadthFirstTraversal(startNode) {
     const visited = [];
-    const queue = new Queue();
+    const queue = [];
 
-    queue.enqueue(startNode);
+    queue.push(startNode);
     visited.push(startNode);
 
-    while ( !queue.isEmpty() ) {
-      const tempNode = queue.dequeue();
+    while (!queue.isEmpty()) {
+      const tempNode = queue.shift();
       console.log(tempNode);
 
       for (let neighbor of this.adjacencyList[tempNode]) {
         if (!visited.includes(neighbor)) {
-          queue.enqueue(neighbor);
+          queue.push(neighbor);
           visited.push(neighbor);
         }
       }
@@ -114,7 +70,5 @@ class Graph {
 }
 
 module.exports = {
-  queueNode,
-  Queue,
   Graph
 }
